@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Feliz Día Mamá 💐</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --rose:    #c8475a;
+      --blush:   #f2c4ce;
+      --cream:   #fdf6f0;
+      --gold:    #c9a84c;
+      --dark:    #2b1a1f;
+    }
+
+    body {
+      min-height: 100vh;
+      background-color: var(--cream);
+      background-image:
+        radial-gradient(ellipse at 10% 0%,   #f7dde5 0%, transparent 55%),
+        radial-gradient(ellipse at 90% 100%,  #fde8d0 0%, transparent 55%);
+      font-family: 'Lato', sans-serif;
+      color: var(--dark);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1rem 4rem;
+      overflow-x: hidden;
+    }
+
+    /* ── Pétalos decorativos ── */
+    .petal {
+      position: fixed;
+      width: 12px; height: 18px;
+      border-radius: 50% 0 50% 0;
+      opacity: 0;
+      animation: fall linear infinite;
+      pointer-events: none;
+      z-index: 0;
+    }
+    @keyframes fall {
+      0%   { transform: translateY(-40px) rotate(0deg);   opacity: .7; }
+      100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+    }
+
+    /* ── Header ── */
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+      position: relative;
+      z-index: 1;
+      animation: fadeDown .9s ease both;
+    }
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .subtitle {
+      font-family: 'Lato', sans-serif;
+      font-weight: 300;
+      font-size: .85rem;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      color: var(--rose);
+      margin-bottom: .6rem;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.4rem, 8vw, 3.8rem);
+      line-height: 1.15;
+      color: var(--dark);
+    }
+    h1 em {
+      font-style: italic;
+      color: var(--rose);
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: .7rem;
+      justify-content: center;
+      margin: 1rem 0;
+      color: var(--gold);
+      font-size: 1rem;
+      letter-spacing: .12em;
+    }
+    .divider::before,
+    .divider::after {
+      content: '';
+      display: block;
+      width: 48px; height: 1px;
+      background: var(--gold);
+      opacity: .6;
+    }
+
+    /* ── Mensaje ── */
+    .message {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: clamp(.95rem, 3vw, 1.15rem);
+      max-width: 480px;
+      text-align: center;
+      line-height: 1.8;
+      color: #5a3a40;
+      margin-bottom: 2.2rem;
+      animation: fadeDown .9s .2s ease both;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── Contenedor de video ── */
+    .video-wrapper {
+      width: 100%;
+      max-width: 560px;
+      position: relative;
+      z-index: 1;
+      animation: fadeUp .9s .35s ease both;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .video-frame {
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow:
+        0 4px 24px rgba(200, 71, 90, .18),
+        0 1px 4px  rgba(0,0,0,.08);
+      border: 3px solid #fff;
+      background: #000;
+      aspect-ratio: 16/9;
+      position: relative;
+    }
+
+    .video-frame video {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    /* ── Flor decorativa inferior ── */
+    .footer-flowers {
+      margin-top: 2.8rem;
+      font-size: 1.6rem;
+      letter-spacing: .5rem;
+      opacity: .55;
+      animation: fadeUp .9s .5s ease both;
+      z-index: 1;
+      position: relative;
+    }
+
+    /* ── Esquinas decorativas ── */
+    .corner {
+      position: fixed;
+      font-size: 3rem;
+      opacity: .12;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .corner.tl { top: 12px;  left: 12px; }
+    .corner.tr { top: 12px;  right: 12px; transform: scaleX(-1); }
+    .corner.bl { bottom: 12px; left: 12px;  transform: scaleY(-1); }
+    .corner.br { bottom: 12px; right: 12px; transform: scale(-1); }
+  </style>
+</head>
+<body>
+
+  <!-- Esquinas florales -->
+  <span class="corner tl">🌸</span>
+  <span class="corner tr">🌸</span>
+  <span class="corner bl">🌸</span>
+  <span class="corner br">🌸</span>
+
+  <header>
+    <p class="subtitle">un mensaje especial para ti</p>
+    <h1>Feliz Día<br><em>Mamá</em></h1>
+    <div class="divider">✦</div>
+  </header>
+
+  <p class="message">
+    Gracias por tu amor infinito, tu paciencia y tu fuerza.<br>
+    Cada día eres mi mayor inspiración. 💐
+  </p>
+
+  <!-- VIDEO: reemplaza "video8.mp4" con el nombre real de tu archivo -->
+  <div class="video-wrapper">
+    <div class="video-frame">
+      <video controls playsinline>
+        <source src="video8.mp4" type="video/mp4" />
+        Tu navegador no soporta la reproducción de video.
+      </video>
+    </div>
+  </div>
+
+  <div class="footer-flowers">🌷 🌸 🌺 🌸 🌷</div>
+
+  <script>
+    // Pétalos cayendo
+    const colors = ['#f2c4ce','#fad4dc','#f9b8c8','#fce4ec','#ffd6e0'];
+    for (let i = 0; i < 18; i++) {
+      const p = document.createElement('div');
+      p.className = 'petal';
+      p.style.cssText = `
+        left: ${Math.random()*100}vw;
+        background: ${colors[Math.floor(Math.random()*colors.length)]};
+        width:  ${8  + Math.random()*8}px;
+        height: ${12 + Math.random()*10}px;
+        animation-duration: ${5 + Math.random()*7}s;
+        animation-delay:    ${Math.random()*6}s;
+        border-radius: ${Math.random()>0.5?'50% 0 50% 0':'0 50% 0 50%'};
+      `;
+      document.body.appendChild(p);
+    }
+  </script>
+</body>
+</html>
